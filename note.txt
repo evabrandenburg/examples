@@ -1,0 +1,5 @@
+1. stop
+2. fix console messages
+3. find the problem area w/ temp changes...test to see if more of less detailed 
+   a)are links correct -> yes opening right files yes -> saved? console filter not set to all...
+   -> wrong sublime colors?
