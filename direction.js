@@ -1,10 +1,16 @@
+$(document).ready(function(){
+
 /*function output( number ) {
 
 };*/
 
 //http://ezbike.xweb.service.cmwp.com/cgi-bin/report.pl?home_latitude=5.5&home_longitude=0&work_latitude=40.714&work_longitude=-73.989
 
- $.getJSON( "http://ezbike.xweb.service.cmwp.com/cgi-bin/report.pl?"
+
+var work = $( "#work" );
+
+work.click(function(){
+ 	$.getJSON( "http://ezbike.xweb.service.cmwp.com/cgi-bin/report.pl?"
 		+"home_latitude="
 		+latitude
 		+"&home_longitude="
@@ -15,7 +21,7 @@
          $("#start").find('input[name="'+ this.types+'"]').attr('value', this.long_name);
         };);
 
-		 function ( data ) {
+		function ( data ) {
 		 	var start0 = $( '#start0' );
 		 	
 		 	start0.text(
@@ -26,19 +32,18 @@
 		 		+ data.begin_at[0].blocks  
 		 		+ " blocks away"
 		 	);
-		 };
-    ); 
-
-
+		};
+    );
+};); 
 
 
 var latitude;
 var longitude;
 
-var button = $( "button" );
-var where = $( "#where" ); 
 
-button.click(function(){
+var click = $( "#click" );
+
+click.click(function(){
 	navigator.geolocation.getCurrentPosition(function(position) {
 		var latitude = position.coords.latitude;
 		var longitude = position.coords.longitude;
@@ -49,6 +54,6 @@ button.click(function(){
 });
 
 /*button.click(function(){
-		where.text( latitude );
-});*/
+		where.text( latitude );*/
+});
 

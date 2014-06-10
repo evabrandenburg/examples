@@ -2,4 +2,10 @@
 2. fix console messages
 3. find the problem area w/ temp changes...test to see if more of less detailed 
    a)are links correct -> yes opening right files yes -> saved? console filter not set to all...
-   -> wrong sublime colors?
+   -> wrong sublime colors? -> check start and endings
+4. make a throwaway page that gets problem area
+5. clean up
+
+yline
+
+debugger; in js file will stop file there
