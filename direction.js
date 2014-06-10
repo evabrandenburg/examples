@@ -1,4 +1,3 @@
-$(document).ready(function(){
 
 /*function output( number ) {
 
@@ -55,5 +54,4 @@ click.click(function(){
 
 /*button.click(function(){
 		where.text( latitude );*/
-});
 
