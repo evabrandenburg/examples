@@ -9,3 +9,9 @@
 yline
 
 debugger; in js file will stop file there
+
+addthis 
+
+jquery mobile
+
+bing

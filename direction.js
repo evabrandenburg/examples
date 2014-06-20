@@ -15,32 +15,31 @@ work.click(function(){
 		+"&home_longitude="
 		+longitude
 		+"&work_latitude=40.714"
-		+"&work_longitude=-73.989",
-        $.each(results[0].address_components, function(){
-         $("#start").find('input[name="'+ this.types+'"]').attr('value', this.long_name);
-        };);
-
-		function ( data ) {
-		 	var start0 = $( '#start0' );
-		 	
-		 	start0.text(
-		 		data.begin_at[0].slots
-		 		+ " bikes at "
-		 		+ data.begin_at[0].name  
-		 		+ ", " 
-		 		+ data.begin_at[0].blocks  
-		 		+ " blocks away"
-		 	);
-		};
+		+"&work_longitude=-73.989"
     );
-};); 
+    function ( data ) {
+    		 	var start0 = $( '#start0' );
+    		 	start0.text(
+    		 		data.begin_at[0].slots
+    		 		+ " bikes at "
+    		 		+ data.begin_at[0].name  
+    		 		+ ", " 
+    		 		+ data.begin_at[0].blocks  
+    		 		+ " blocks away"
+    		 	);
+    });
+}); 
+
+//already able to generate lat and long from location on click
+//need to put that lat and long into API web address
+//goal to output start statation.... on click of another button
 
 
 var latitude;
 var longitude;
 
-
 var click = $( "#click" );
+var where = $( "#where" );
 
 click.click(function(){
 	navigator.geolocation.getCurrentPosition(function(position) {

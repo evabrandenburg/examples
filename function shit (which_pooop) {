@@ -1,0 +1,25 @@
+function shit (which_pooop) {
+ a;
+ b;
+ c;
+
+ d;
+ e;
+ f;
+ g;
+ thing = which_pooop;
+ h(thing);
+ i;
+ j;
+
+ k;
+ l;
+ m;
+ n;
+}
+
+
+function crap (toilet) {
+	poop = toilet.get_poop();
+    shit(poop);
+}
