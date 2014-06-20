@@ -10,17 +10,22 @@ var longitude;
 var click = $( "#click" );
 var where = $( "#where" );
 
-click.click(function(){
+
+function callNav(){
 	navigator.geolocation.getCurrentPosition(function(position) {
 		var latitude = position.coords.latitude;
 		var longitude = position.coords.longitude;
 		where.text( "The latitude is "
 		 + latitude
 		  + " and the longitude is " + longitude + " good luck");
+	});
+
+};
 
 var work = $( "#work" );
 
-work.click(function(){
+
+function callApi(){
  	$.getJSON( "http://ezbike.xweb.service.cmwp.com/cgi-bin/report.pl?"
 		+"home_latitude="
 		+latitude
@@ -29,7 +34,10 @@ work.click(function(){
 		+"&work_latitude=55.714"
 		+"&work_longitude=-65.989"
     );
-    function work( data ) {
+};
+
+
+    function answer( data ) {
     	var start0 = $( '#start0' );
     	start0.text(
     		 data.begin_at[0].slots
@@ -40,11 +48,12 @@ work.click(function(){
     		 + " blocks away"
     	);
     };
-}); 
 
-
-	});
-});
+Go.click(function GO(){
+	callNav();
+	callApi();
+	answer( data );
+};);
 
 //already able to generate lat and long from location on click
 //need to put that lat and long into API web address
