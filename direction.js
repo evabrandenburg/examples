@@ -33,27 +33,28 @@ function callApi(){
 		+longitude
 		+"&work_latitude=55.714"
 		+"&work_longitude=-65.989"
+
     );
 };
 
 
-    function answer( data ) {
-    	var start0 = $( '#start0' );
-    	start0.text(
-    		 data.begin_at[0].slots
-    		 + " bikes at "
-    		 + data.begin_at[0].name  
-    		 + ", " 
-    		 + data.begin_at[0].blocks  
-    		 + " blocks away"
-    	);
-    };
+function answer( data ) {
+	var start0 = $( '#start0' );
+	start0.text(
+		 data.begin_at[0].slots
+		 + " bikes at "
+		 + data.begin_at[0].name  
+		 + ", " 
+		 + data.begin_at[0].blocks  
+		 + " blocks away"
+	);
+};
 
-Go.click(function GO(){
+/*Go.click(function GO(){
 	callNav();
 	callApi();
 	answer( data );
-};);
+});*/
 
 //already able to generate lat and long from location on click
 //need to put that lat and long into API web address
