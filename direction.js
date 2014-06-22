@@ -7,33 +7,33 @@ var longitude;
 
 
 //http://ezbike.xweb.service.cmwp.com/cgi-bin/report.pl?home_latitude=5.5&home_longitude=0&work_latitude=40.714&work_longitude=-73.989
-var click = $( "#click" );
+var Go = $( "#go" );
 var where = $( "#where" );
+var work = $( "#work" );
 
+Go.click( callNav );
 
 function callNav(){
-	navigator.geolocation.getCurrentPosition(function(position) {
+	navigator.geolocation.getCurrentPosition(function( position ) {
 		var latitude = position.coords.latitude;
 		var longitude = position.coords.longitude;
 		where.text( "The latitude is "
 		 + latitude
 		  + " and the longitude is " + longitude + " good luck");
-	});
 
+		callApi( latitude, longitude );
+	}); 
 };
 
-var work = $( "#work" );
 
-
-function callApi(){
+function callApi( hLatitude, hLongitude ){
  	$.getJSON( "http://ezbike.xweb.service.cmwp.com/cgi-bin/report.pl?"
 		+"home_latitude="
-		+latitude
+		+hLatitude
 		+"&home_longitude="
-		+longitude
+		+hLongitude
 		+"&work_latitude=55.714"
-		+"&work_longitude=-65.989"
-
+		+"&work_longitude=-65.989", answer
     );
 };
 
